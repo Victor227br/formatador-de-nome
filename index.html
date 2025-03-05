@@ -8,19 +8,30 @@
 </head>
 <body>
 
-    <div id="alinhar">
+    
     <div id="container-input">
-        <!-- <h1>adicione um nome</h1> -->
-        <div id="estilo-input"><input id="input" type="text"></div>
+        <div id="estilo-input"><input id="input" type="text" placeholder="Escreva um nome"></div>
         <button id="btn-add">Adicionar Nome</button>
     </div>
+        
+    <span class="alinhar">
+    
+    <div id="container-nome">
+        <ul id="listaNome"></ul>
 
-    <div id="container-nome"></div>
+        <div class="estiloBtn">
+            <button onclick="formatName()" class="formatNameBtn">Formatar nome</button>
+            <button onclick="deleteList()" class="btnclear">Limpar lista</button>
+        </div>
+    </div>
 
-   
-    <div class="container-formatar"></div>
-</div>
+        <div class="container-formatar"></div>
+         <div class="container-formatar"></div>
+       
+    </span>
+
+
+    
     <script src="script.js"></script>   
-
 </body>
 </html>

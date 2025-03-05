@@ -6,7 +6,8 @@ body{
 
 .alinhar{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 #container-input{
@@ -14,12 +15,14 @@ body{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    width: 30vw;
+    width: 35vw;
     height: 10vw;
     border-radius: 5px;
     background-color: #484C69;
     border: 3px solid rgb(27, 180, 103);
-    margin: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 #estilo-input{
@@ -38,15 +41,7 @@ body{
     box-shadow: 0 0 0 0;
     border: 0;
     outline: 0;
-}
-
-#container-nome{
-    width: 30vw;
-    height: 30vw;
-    border-radius: 5px;
-    background-color: #484C69;
-    border: 3px solid rgb(27, 180, 103);
-    margin-left: 30px; 
+    margin: 0;
 }
 
 #btn-add{
@@ -58,15 +53,70 @@ body{
     outline: 0;
     background-color: rgb(27, 180, 103);
     color: white;
+    cursor: pointer;
 }
 
-#alinhar{
+#container-nome{
+    width: 35vw;
+    height: 30vw;
+    border-radius: 5px;
+    background-color: #484C69;
+    border: 3px solid rgb(27, 180, 103);
+    margin-left: 30px; 
+    color:white
+}
+
+#listaNome{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 20vw;
     flex-direction: column;
-
+    margin: 0;
+    padding: 10px;
+    padding-top:2vw ;
+ 
 }
+
+.Item{
+    list-style: none;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+.estiloBtn{
+    display: flex;
+    align-items:center;
+    flex-direction: column-reverse;
+}
+
+.formatNameBtn{
+    width: 9vw;
+    height: 2vw;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0;
+    border: 0;
+    outline: 0;
+    background-color: rgb(27, 180, 103);
+    color: white;
+    cursor: pointer;
+   
+}
+
+.btnclear{
+    width: 9vw;
+    height: 2vw;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0;
+    border: 0;
+    outline: 0;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+} 
+
 .container-formatar{
+    margin-left: 20px;
     width: 30vw;
     height: 30vw;
     border-radius: 5px;
