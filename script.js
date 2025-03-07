@@ -1,30 +1,42 @@
 let input = document.querySelector('#input')
-let list = document.querySelector('#listaNome')
+let lista = document.querySelector('#listaNome')
+let listaFormatar = document.querySelector('#listaFormatarNome')
 
-function formatName(){
+function listaNome(){
     if (input.value.trim() === "") {
         return;
     } 
 
     let item = document.createElement('li')
-    let name = document.createElement('h2')
+    let nome = document.createElement('h2')
     item.className = ('Item');
-    name.className = ('nameItem')
-    item.appendChild(name);
-    list.appendChild(item);
+    nome.className = ('nameItem')
+    item.appendChild(nome);
+    lista.appendChild(item);
     item.innerHTML = ('- ') + input.value;
 }
 
-function addName (e) {
+ function formatarNome (){
+    const nomeFormatado = nome.split(" ");
+    for(let i = 0; i < nomeFormatado.length; i++){
+        nomeFormatado[i] = nomeFormatado[i][0].toUpperCase() + nomeFormatado[i].substr(1);
+}
+    nomeFormatado.join(" ");
+    nomeFormatado.className('nomeFormatado')
+
+    listaFormatar.appendChild(nomeFormatado)
+    nomeFormatado.innerHTML =('- ') + listaFormatar
+ }
+
+function adicionarNome (e) {
     if (e.key === 'Enter'){ 
-        formatName();
+        listaNome();
         input.value = ""; 
     }
 }
+    input.addEventListener('keyup', adicionarNome)
 
-    input.addEventListener('keyup', addName)
-
-    function deleteList(){
-        list.innerHTML = '';
+    function deletarLista(){
+        lista.innerHTML = '';
     }
 

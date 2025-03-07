@@ -5,9 +5,10 @@ body{
 }
 
 .alinhar{
+    
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 #container-input{
@@ -19,7 +20,7 @@ body{
     height: 10vw;
     border-radius: 5px;
     background-color: #484C69;
-    border: 3px solid rgb(27, 180, 103);
+    border: 3px solid #9932cc;
     margin-bottom: 30px;
     margin-top: 20px;
     margin-left: 30px;
@@ -61,7 +62,7 @@ body{
     height: 30vw;
     border-radius: 5px;
     background-color: #484C69;
-    border: 3px solid rgb(27, 180, 103);
+    border: 3px solid #9932cc;
     margin-left: 30px; 
     color:white
 }
@@ -116,10 +117,20 @@ body{
 } 
 
 .container-formatar{
-    margin-left: 20px;
-    width: 30vw;
+    margin-right: 40px;
+    width: 55vw;
     height: 30vw;
     border-radius: 5px;
     background-color: #484C69;
-    border: 3px solid rgb(27, 180, 103);
+    border: 3px solid #9932cc;
+}
+
+#listaFormatarNome{
+    display: flex;
+    flex-wrap: wrap;
+    height: 24vw;
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+    padding-top:2vw ;
 }
