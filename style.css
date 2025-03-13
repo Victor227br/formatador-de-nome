@@ -17,13 +17,24 @@ body{
     align-items: center;
     flex-direction: column;
     width: 35vw;
-    height: 10vw;
+    height: 12vw;
     border-radius: 5px;
     background-color: #484C69;
     border: 3px solid #9932cc;
     margin-bottom: 30px;
     margin-top: 20px;
     margin-left: 30px;
+}
+
+.estiloH2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 3vw;
+    background-color: #9932cc;
+    color: white;
+    border-radius: 5px;
 }
 
 #estilo-input{
@@ -33,7 +44,7 @@ body{
 
 #input{
     width: 15vw;
-    height: 20px;
+    height: 24px;
     margin-top: 10px;
     border-radius: 5px;
     padding-right: 2px;
@@ -59,7 +70,7 @@ body{
 
 #container-nome{
     width: 35vw;
-    height: 30vw;
+    height: 28vw;
     border-radius: 5px;
     background-color: #484C69;
     border: 3px solid #9932cc;
@@ -70,7 +81,7 @@ body{
 #listaNome{
     display: flex;
     flex-wrap: wrap;
-    height: 20vw;
+    height: 18vw;
     flex-direction: column;
     margin: 0;
     padding: 10px;
@@ -82,12 +93,14 @@ body{
     list-style: none;
     font-size: 20px;
     flex-wrap: wrap;
+    padding: 7px;
 }
 
 .estiloBtn{
     display: flex;
     align-items:center;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse;  
+    padding-bottom: 7px;
 }
 
 .formatNameBtn{
@@ -100,7 +113,6 @@ body{
     background-color: rgb(27, 180, 103);
     color: white;
     cursor: pointer;
-   
 }
 
 .btnclear{
@@ -117,20 +129,49 @@ body{
 } 
 
 .container-formatar{
-    margin-right: 40px;
+    margin-top: 20px;
+    margin-right:  30px;
     width: 55vw;
-    height: 30vw;
+    height: 43vw;
     border-radius: 5px;
     background-color: #484C69;
     border: 3px solid #9932cc;
 }
 
+.divEstiloNomeFormatado{
+    display: flex;
+    justify-content: center;
+    margin: 20px;;
+}
+
+.nomeFormatado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 4vw;
+    background-color: #9932cc;
+    color: white;
+    border-radius: 5px;
+}
+
 #listaFormatarNome{
     display: flex;
     flex-wrap: wrap;
-    height: 24vw;
+    height: 29vw;
     flex-direction: column;
     margin: 0;
     padding: 10px;
     padding-top:2vw ;
+}
+
+.divItem{
+    display: flex;
+    justify-content: space-around
+};
+
+.BtnExcluirLi{
+    width: 20px;
+    height: 10px;
+    background-color: #9932cc;
 }

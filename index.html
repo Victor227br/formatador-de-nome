@@ -9,12 +9,16 @@
 <body>
 
     
-    <div id="container-input">
-        <div id="estilo-input"><input id="input" type="text" placeholder="Escreva um nome"></div>
-        <button  onclick="listaNome()" id="btn-add">Adicionar Nome</button>
-    </div>
-
-    <span class="alinhar">    
+    <span class="alinhar">
+    <div>
+      <div id="container-input">
+        <div class="estiloH2">
+            <h2>formatador de nome</h2>
+        </div>
+         <div id="estilo-input"><input id="input" type="text" placeholder="Escreva um nome"></div>
+         <button  onclick="listaNome()" id="btn-add">Adicionar Nome</button>
+      </div>
+    
       <div id="container-nome">
          <ul id="listaNome"></ul>
           <div class="estiloBtn">
@@ -22,11 +26,16 @@
             <button onclick="deletarLista()" class="btnclear">Limpar lista</button>
           </div>
     </div>
-
+</div>
     <div class="container-formatar">
+        <div class="divEstiloNomeFormatado">
+            <div class="nomeFormatado">
+                <h2>Nomes formatados</h2>
+            </div>
+        </div>
         <ul id="listaFormatarNome"></ul>
         <div class="estiloBtn">
-        <button onclick="deletarLista()" class="btnclear">Limpar lista</button>
+        <button onclick= "deletarListaFormatar()" class="btnclear">Limpar lista</button>
     </div>
 </span>
 
