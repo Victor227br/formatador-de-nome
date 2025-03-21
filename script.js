@@ -21,8 +21,7 @@ function listaNome(){
     divItem.appendChild(BtnExcluir)
     item.appendChild(divItem)
     lista.appendChild(item);
-    console.log
-    // item.innerHTML = ('- ') + input.value;
+    item.innerHTML = input.value;
 }
 
  function formatarNome (){
@@ -31,9 +30,16 @@ function listaNome(){
         nomeFormatado[i] = nomeFormatado[i][0].toUpperCase() + nomeFormatado[i].substr(1);
 
     nomeFormatado.join(" ");
-    nomeFormatado.className('nomeFormatado')
-    listaFormatar.appendChild(nomeFormatado)
-    nomeFormatado.innerHTML = ('- ') + listaFormatar
+   
+    let itemFormatado = document.createElement('li')
+    itemFormatado.getElementsByClassName('Item')
+    
+    let novoNome = document.createElement('h2')
+    novoNome.getElementsByClassName('nameItem')
+    nomeFormatado.innerHTML = novoNome
+
+    itemFormatado.appendChild(nomeNovo)
+    listaFormatar.appendChild(itemFormatado)
  }
  }
 

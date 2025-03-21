@@ -167,11 +167,28 @@ body{
 
 .divItem{
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    font-size: 20px
 };
 
 .BtnExcluirLi{
     width: 20px;
     height: 10px;
     background-color: #9932cc;
+}
+
+@media (max-width: 600px) {
+
+#container-input{
+
+};
+
+#container-nome{
+
+}
+
+.container-formatar{
+
+};
+
 }
