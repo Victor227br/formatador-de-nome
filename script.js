@@ -14,9 +14,10 @@ function listaNome(){
     let BtnExcluir = document.createElement('button')
     BtnExcluir.className = "BtnExcluirLi"
     let nome = document.createElement('h2')
-    nome.innerHTML = (" ") + input.value
     nome.className  = "nameItem"
 
+
+    
     divItem.appendChild(nome)
     divItem.appendChild(BtnExcluir)
     item.appendChild(divItem)
@@ -25,23 +26,41 @@ function listaNome(){
 }
 
  function formatarNome (){
-    const nomeFormatado = document.querySelector = ('nameItem').split(" ")
+    
+    
+    const nomeFormatado = document.querySelectorAll = ('.nameItem').split(" ")
     for(let i = 0; i < nomeFormatado.length; i++){
         nomeFormatado[i] = nomeFormatado[i][0].toUpperCase() + nomeFormatado[i].substr(1);
 
     nomeFormatado.join(" ");
    
     let itemFormatado = document.createElement('li')
-    itemFormatado.getElementsByClassName('Item')
-    
     let novoNome = document.createElement('h2')
-    novoNome.getElementsByClassName('nameItem')
-    nomeFormatado.innerHTML = novoNome
+    novoNome.className =  'novoNome'
+    novoNome.innerText = nomeFormatado.value
+  
+    console.log('Novonome' , nomeFormatado)
 
-    itemFormatado.appendChild(nomeNovo)
+    itemFormatado.appendChild(novoNome)
     listaFormatar.appendChild(itemFormatado)
+
+    console.log(novoNome ,'novoNome')
+    console.log(nomeFormatado , 'nomeFormatado')
+
  }
+ //}
+
+function formatarLista(){
+ 
+//  for(let element of nome){
+//     console.log(element)
  }
+
+//pegar os elementos de toda listaNome e passar para e passar para listaFormatar
+//passar para lista formatar
+ //formartar todos os itens 
+ // Tirar "de, da, do" da regra de 
+}
 
 function adicionarNome (e) {
     if (e.key === 'Enter'){ 
@@ -49,14 +68,16 @@ function adicionarNome (e) {
         input.value = ""; 
     }
 }
+
+
     input.addEventListener('keyup', adicionarNome)
 
+
 function deletarListaFormatada(){
-    listaFormatar.innerHTML = ''
+    formatarNome.innerHTML = ''
 }
 
-    function deletarLista(){
-        lista.innerHTML = '';
+function deletarLista(){
+        lista.innerHTML = ''; 
     }
 
- 
