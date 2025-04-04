@@ -1,15 +1,13 @@
 let input = document.querySelector('#input')
 let lista = document.querySelector('#listaNome')
 let listaFormatar = document.querySelector('#listaFormatarNome')
-let nome = 'victor';
 
-nome = 22;
 
 function listaNome(){
-    if (input.value.trim() === "") {
+    if (input.value.trim() === "") { 
         return;
-
     } 
+    
     let item = document.createElement('li')
     item.className = "Item"
     let divItem = document.createElement('div')
@@ -28,12 +26,17 @@ function listaNome(){
     item.appendChild(divItem)
     lista.appendChild(item);
     nome.innerHTML = input.value;
-  
+
+    btnFormatar.addEventListener('click', function() {
+        formatador(nome);
+    })
+
 }
- 
+
 function adicionarNome (e) {
     if (e.key === 'Enter'){ 
         listaNome()
+        input.value = ""; 
     }
 }
     input.addEventListener('keyup', adicionarNome)
@@ -45,29 +48,45 @@ function deletarListaFormatada(){
 
 function deletarLista(){
     lista.innerHTML = ''; 
-
 }
 
 function formatador(nome){
-  
-  let nomesArray = []
-    nomesArray = input.value.trim().split(/[\s]+/).map(nome => nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase())
+    let nomesArray = []
+    nomesArray = nome.trim().split(/[\s]+/).map(nome => nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase())
     let resultado = nomesArray.join(" ")
-    let resultadoH2 = document.createElement('h2')
-    resultadoH2.textContent = resultado
-    let itemFormatado = document.createElement('li')
 
-    let divResultado = document.getElementById("resultado");
+    let itemFormatado = document.createElement('li');
+    itemFormatado.className = "ItemFormatado";
+    let nomeFormatado = document.createElement('h2');
+    nomeFormatado.className = "nameItemFormatado";
+    resultado.innerHTML = nomeFormatado;
     
-    
-    divResultado.appendChild(resultadoH2);
-   itemFormatado.appendChild(divResultado)
-   listaFormatar.appendChild(itemFormatado)
+    itemFormatado.appendChild(nomeFormatado);
+    listaFormatar.appendChild(itemFormatado)
+
     console.log(resultado)
-    console.log(nomesArray)
+}
+ 
+function ListaNomesFormatados(){
+
+}
+
+ 
+    //pegar o valor do nome(h2) ou armazenar os valores do input 
+    //O problema está no input dbugar amanhã
     //pegar o nome do input 
     //separar os nomes do input
     //iterar os nomes 
     //capitalizar cada um deles 
     //atenção aos nomes 'de'
-}
+
+
+
+    // let resultadoH2 = document.createElement('h2')
+    // resultadoH2.textContent = resultado
+    // let itemFormatado = document.createElement('li')
+    // let divResultado = document.getElementById("resultado");
+//     divResultado.appendChild(resultadoH2);
+//    itemFormatado.appendChild(divResultado)
+//    listaFormatar.appendChild(itemFormatado)
+    

@@ -35,6 +35,7 @@ body{
     background-color: #9932cc;
     color: white;
     border-radius: 5px;
+    border: 2px solid white;
 }
 
 #estilo-input{
@@ -146,6 +147,7 @@ body{
     background-color: #9932cc;
     color: white;
     border-radius: 5px;
+    border: 2px solid white;
 }
 
 #listaFormatarNome{
@@ -164,7 +166,7 @@ body{
     list-style: none;
     font-size: 20px;
     flex-wrap: wrap;
-    padding: 5px;
+   
 }
 
 
