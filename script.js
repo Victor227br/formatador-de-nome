@@ -1,83 +1,73 @@
 let input = document.querySelector('#input')
 let lista = document.querySelector('#listaNome')
 let listaFormatar = document.querySelector('#listaFormatarNome')
+let nome = 'victor';
+
+nome = 22;
 
 function listaNome(){
     if (input.value.trim() === "") {
         return;
-    } 
 
+    } 
     let item = document.createElement('li')
     item.className = "Item"
     let divItem = document.createElement('div')
     divItem.className = "divItem"
-    let BtnExcluir = document.createElement('button')
-    BtnExcluir.className = "BtnExcluirLi"
+    let divBtnFormatar = document.createElement('div')
+    divBtnFormatar.className = "divBtnFormatar"
+    let btnFormatar = document.createElement('button')
+    btnFormatar.className = "btnFormatarNome"
+    btnFormatar.innerHTML = 'Formatar'
     let nome = document.createElement('h2')
     nome.className  = "nameItem"
 
-
-    
+    divBtnFormatar.appendChild(btnFormatar)
     divItem.appendChild(nome)
-    divItem.appendChild(BtnExcluir)
+    divItem.appendChild(divBtnFormatar)
     item.appendChild(divItem)
     lista.appendChild(item);
-    item.innerHTML = input.value;
-}
-
- function formatarNome (){
-    
-    
-    const nomeFormatado = document.querySelectorAll = ('.nameItem').split(" ")
-    for(let i = 0; i < nomeFormatado.length; i++){
-        nomeFormatado[i] = nomeFormatado[i][0].toUpperCase() + nomeFormatado[i].substr(1);
-
-    nomeFormatado.join(" ");
-   
-    let itemFormatado = document.createElement('li')
-    let novoNome = document.createElement('h2')
-    novoNome.className =  'novoNome'
-    novoNome.innerText = nomeFormatado.value
+    nome.innerHTML = input.value;
   
-    console.log('Novonome' , nomeFormatado)
-
-    itemFormatado.appendChild(novoNome)
-    listaFormatar.appendChild(itemFormatado)
-
-    console.log(novoNome ,'novoNome')
-    console.log(nomeFormatado , 'nomeFormatado')
-
- }
- //}
-
-function formatarLista(){
- 
-//  for(let element of nome){
-//     console.log(element)
- }
-
-//pegar os elementos de toda listaNome e passar para e passar para listaFormatar
-//passar para lista formatar
- //formartar todos os itens 
- // Tirar "de, da, do" da regra de 
 }
-
+ 
 function adicionarNome (e) {
     if (e.key === 'Enter'){ 
-        listaNome();
-        input.value = ""; 
+        listaNome()
     }
 }
-
-
     input.addEventListener('keyup', adicionarNome)
 
 
 function deletarListaFormatada(){
-    formatarNome.innerHTML = ''
+    formatarNome.innerHTML = '';
 }
 
 function deletarLista(){
-        lista.innerHTML = ''; 
-    }
+    lista.innerHTML = ''; 
 
+}
+
+function formatador(nome){
+  
+  let nomesArray = []
+    nomesArray = input.value.trim().split(/[\s]+/).map(nome => nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase())
+    let resultado = nomesArray.join(" ")
+    let resultadoH2 = document.createElement('h2')
+    resultadoH2.textContent = resultado
+    let itemFormatado = document.createElement('li')
+
+    let divResultado = document.getElementById("resultado");
+    
+    
+    divResultado.appendChild(resultadoH2);
+   itemFormatado.appendChild(divResultado)
+   listaFormatar.appendChild(itemFormatado)
+    console.log(resultado)
+    console.log(nomesArray)
+    //pegar o nome do input 
+    //separar os nomes do input
+    //iterar os nomes 
+    //capitalizar cada um deles 
+    //atenção aos nomes 'de'
+}

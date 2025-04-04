@@ -89,13 +89,6 @@ body{
  
 }
 
-.Item{
-    list-style: none;
-    font-size: 20px;
-    flex-wrap: wrap;
-    padding: 7px;
-}
-
 .estiloBtn{
     display: flex;
     align-items:center;
@@ -165,16 +158,34 @@ body{
     padding-top:2vw ;
 }
 
+.Item{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    font-size: 20px;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+
 .divItem{
     display: flex;
+    align-items: center;
+    font-size: 15px;
     justify-content: space-around;
-    font-size: 20px
-};
 
-.BtnExcluirLi{
-    width: 20px;
-    height: 10px;
-    background-color: #9932cc;
+}
+
+.divBtnFormatar{
+ display: flex;
+ flex-direction: column;
+ justify-content: center; 
+ margin: 20px;
+}
+
+.btnFormatarNome{
+    width: 70px;
+    height: 30px;
 }
 
 @media (max-width: 430px) {
