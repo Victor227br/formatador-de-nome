@@ -6,8 +6,8 @@ let listaFormatar = document.querySelector('#listaFormatarNome')
 function listaNome(){
     if (input.value.trim() === "") { 
         return;
-    } 
     
+    } 
     let item = document.createElement('li')
     item.className = "Item"
     let divItem = document.createElement('div')
@@ -30,7 +30,6 @@ function listaNome(){
     btnFormatar.addEventListener('click', function() {
         formatador(nome);
     })
-
 }
 
 function adicionarNome (e) {
@@ -41,9 +40,8 @@ function adicionarNome (e) {
 }
     input.addEventListener('keyup', adicionarNome)
 
-
 function deletarListaFormatada(){
-    formatarNome.innerHTML = '';
+    listaFormatar.innerHTML = '';
 }
 
 function deletarLista(){
@@ -51,25 +49,61 @@ function deletarLista(){
 }
 
 function formatador(nome){
-    let nomesArray = []
-    nomesArray = nome.trim().split(/[\s]+/).map(nome => nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase())
-    let resultado = nomesArray.join(" ")
+
+    let texto = nome.textContent;
+    let nomesArray = texto.trim().split(" ");
+
+        let nomesFormatados = nomesArray.map(palavra =>
+        palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()
+)
+
+   let resultado = nomesFormatados.join(" ")
 
     let itemFormatado = document.createElement('li');
     itemFormatado.className = "ItemFormatado";
-    let nomeFormatado = document.createElement('h2');
-    nomeFormatado.className = "nameItemFormatado";
-    resultado.innerHTML = nomeFormatado;
-    
-    itemFormatado.appendChild(nomeFormatado);
-    listaFormatar.appendChild(itemFormatado)
 
-    console.log(resultado)
+    let resultadoNome = document.createElement('h2');
+    resultadoNome.className = "nameItemFormatado";
+    resultadoNome.textContent = resultado;
+
+    itemFormatado.appendChild(resultadoNome)
+    listaFormatar.appendChild(itemFormatado)   
 }
+
  
-function ListaNomesFormatados(){
+function formatadorLista() {
+    
+    let listaPai = document.getElementById("listaNome")
+    let liFilhos = listaPai.getElementsByClassName("nameItem");
+  
+    for (let nomesLista of liFilhos) {
+        let texto = nomesLista.textContent;
+        let nomeListaArray = texto.trim().split(" ");
 
+        let nomesListaFormatados = nomeListaArray.map(palavra =>
+            palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()
+        );
+
+        let listaResultado = nomesListaFormatados.join(" ");
+        nomesLista.textContent = listaResultado;
+        console.log (listaResultado)
+
+        let itemListaFormatado = document.createElement('li');
+        itemListaFormatado.className = "ItemFormatado";
+    
+        let titulo = document.createElement('h2');
+        titulo.className = "nameItemFormatado";
+        titulo.textContent = listaResultado;
+    
+        itemListaFormatado.appendChild(titulo);
+        listaFormatar.appendChild(itemListaFormatado);
+        lista.innerHTML = ''
+    }
+   
 }
+
+
+
 
  
     //pegar o valor do nome(h2) ou armazenar os valores do input 
@@ -80,13 +114,4 @@ function ListaNomesFormatados(){
     //capitalizar cada um deles 
     //atenção aos nomes 'de'
 
-
-
-    // let resultadoH2 = document.createElement('h2')
-    // resultadoH2.textContent = resultado
-    // let itemFormatado = document.createElement('li')
-    // let divResultado = document.getElementById("resultado");
-//     divResultado.appendChild(resultadoH2);
-//    itemFormatado.appendChild(divResultado)
-//    listaFormatar.appendChild(itemFormatado)
-    
+ 
