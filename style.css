@@ -5,7 +5,6 @@ body{
 }
 
 .alinhar{
-    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +34,7 @@ body{
     background-color: #9932cc;
     color: white;
     border-radius: 5px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
 }
 
 #estilo-input{
@@ -86,7 +85,7 @@ body{
     flex-direction: column;
     margin: 0;
     padding: 10px;
-    padding-top:2vw ;
+    padding-top:1vw ;
  
 }
 
@@ -147,7 +146,7 @@ body{
     background-color: #9932cc;
     color: white;
     border-radius: 5px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
 }
 
 #listaFormatarNome{
@@ -164,18 +163,15 @@ body{
     display: flex;
     justify-content: flex-start;
     list-style: none;
-    font-size: 20px;
-    flex-wrap: wrap;
+    margin-left: 10px;
    
 }
-
 
 .divItem{
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 16px;
     justify-content: space-around;
-
 }
 
 .divBtnFormatar{
@@ -188,20 +184,107 @@ body{
 .btnFormatarNome{
     width: 70px;
     height: 30px;
+    border-radius: 5px;
+    background-color:  rgb(27, 180, 103);
+    color: white;
+    border: 0;
+    outline: 0;
 }
 
-@media (max-width: 430px) {
+.ItemFormatado{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    font-size: 16px;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    color:  white;
+}
+
+
+@media (max-width: 520px) {
+
+.alinhar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8px;
+   
+}
 
 #container-input{
+    width: 90vw;
+    height: 40vw;
+    border-radius: 5px;
+    background-color: #484C69;
+    border: 3px solid #9932cc;
+    margin: 10px;
+    
+}
 
-};
+.estiloH2{
+    width: 50vw;
+    height: 8vw;
+    font-size: 13px;
+}
+
+#input{
+    width: 45vw;
+    height: 24px;
+}
+
+#btn-add{
+    width: 28vw;
+    height: 7vw;
+}
 
 #container-nome{
+    width: 90vw;
+    height: 70vw;
+    margin-left: 10px;
+}
 
+#listaNome{
+    height: 50vw;
+    padding: 2px;
+}
+
+.divItem{
+    font-size: 12px;
+}
+
+.btnFormatarNome{
+    width: 16vw;
+    height: 5vw;
+}
+
+.formatNameBtn{
+    width: 28vw;
+    height: 6vw;  
+}
+
+.btnclear{
+    width: 28vw;
+    height: 6vw;
 }
 
 .container-formatar{
+    width: 90vw;
+    height: 85vw;
+    margin-left: 9px;
+}
 
-};
+#listaFormatarNome{
+    height: 50vw;
+}
 
+.nomeFormatado{
+    width: 50vw;
+    height: 8vw;
+    font-size: 13px;
+}
+
+.ItemFormatado{
+    font-size: 12px;
+}
 }

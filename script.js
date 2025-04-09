@@ -18,9 +18,9 @@ function listaNome(){
     btnFormatar.className = "btnFormatarNome"
     btnFormatar.innerHTML = 'Formatar'
     let nome = document.createElement('h2')
-    nome.className  = "nameItem"
+    nome.className  = "nameItem" 
 
-    divBtnFormatar.appendChild(btnFormatar)
+    divBtnFormatar.appendChild(btnFormatar) 
     divItem.appendChild(nome)
     divItem.appendChild(divBtnFormatar)
     item.appendChild(divItem)
@@ -29,6 +29,7 @@ function listaNome(){
 
     btnFormatar.addEventListener('click', function() {
         formatador(nome);
+        item.innerHTML = " "
     })
 }
 
@@ -68,14 +69,14 @@ function formatador(nome){
 
     itemFormatado.appendChild(resultadoNome)
     listaFormatar.appendChild(itemFormatado)   
+
+
 }
 
- 
 function formatadorLista() {
-    
     let listaPai = document.getElementById("listaNome")
     let liFilhos = listaPai.getElementsByClassName("nameItem");
-  
+
     for (let nomesLista of liFilhos) {
         let texto = nomesLista.textContent;
         let nomeListaArray = texto.trim().split(" ");
@@ -85,6 +86,7 @@ function formatadorLista() {
         );
 
         let listaResultado = nomesListaFormatados.join(" ");
+      
         nomesLista.textContent = listaResultado;
         console.log (listaResultado)
 
@@ -97,15 +99,10 @@ function formatadorLista() {
     
         itemListaFormatado.appendChild(titulo);
         listaFormatar.appendChild(itemListaFormatado);
-        lista.innerHTML = ''
-    }
-   
+    } 
+    
+     lista.innerHTML = ''
 }
-
-
-
-
- 
     //pegar o valor do nome(h2) ou armazenar os valores do input 
     //O problema está no input dbugar amanhã
     //pegar o nome do input 
