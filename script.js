@@ -7,7 +7,7 @@ function listaNome(){
     if (input.value.trim() === "") { 
         return;
     
-    } 
+} 
     let item = document.createElement('li')
     item.className = "Item"
     let divItem = document.createElement('div')
@@ -49,59 +49,55 @@ function deletarLista(){
     lista.innerHTML = ''; 
 }
 
-function formatador(nome){
+function formatarNomeComRegras(texto) {
+    const palavrasMinusculas = ['da', 'de', 'do', 'das', 'dos']
+    let nomesArray = texto.trim().toLowerCase().split(" ")
+    
+    return nomesArray.map(palavra => {
+    if (!palavrasMinusculas.includes(palavra)) {
+            return palavra.charAt(0).toUpperCase() + palavra.slice(1)
+    } else {
+        return palavra
+}
+})
+    .join(" ")
+}
 
-    let texto = nome.textContent;
-    let nomesArray = texto.trim().split(" ");
+function formatador(nome) {
+    let texto = nome.textContent
+    let resultado = formatarNomeComRegras(texto)
 
-        let nomesFormatados = nomesArray.map(palavra =>
-        palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()
-)
+    let itemFormatado = document.createElement('li')
+    itemFormatado.className = "ItemFormatado"
 
-   let resultado = nomesFormatados.join(" ")
-
-    let itemFormatado = document.createElement('li');
-    itemFormatado.className = "ItemFormatado";
-
-    let resultadoNome = document.createElement('h2');
-    resultadoNome.className = "nameItemFormatado";
-    resultadoNome.textContent = resultado;
+    let resultadoNome = document.createElement('h2')
+    resultadoNome.className = "nameItemFormatado"
+    resultadoNome.textContent = resultado
 
     itemFormatado.appendChild(resultadoNome)
-    listaFormatar.appendChild(itemFormatado)   
-
-
+    listaFormatar.appendChild(itemFormatado)
 }
 
 function formatadorLista() {
     let listaPai = document.getElementById("listaNome")
-    let liFilhos = listaPai.getElementsByClassName("nameItem");
+    let liFilhos = listaPai.getElementsByClassName("nameItem")
 
     for (let nomesLista of liFilhos) {
-        let texto = nomesLista.textContent;
-        let nomeListaArray = texto.trim().split(" ");
+        let texto = nomesLista.textContent
+        let listaResultado = formatarNomeComRegras(texto)
 
-        let nomesListaFormatados = nomeListaArray.map(palavra =>
-            palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase()
-        );
+        let itemListaFormatado = document.createElement('li')
+        itemListaFormatado.className = "ItemFormatado"
 
-        let listaResultado = nomesListaFormatados.join(" ");
-      
-        nomesLista.textContent = listaResultado;
-        console.log (listaResultado)
+        let titulo = document.createElement('h2')
+        titulo.className = "nameItemFormatado"
+        titulo.textContent = listaResultado
 
-        let itemListaFormatado = document.createElement('li');
-        itemListaFormatado.className = "ItemFormatado";
-    
-        let titulo = document.createElement('h2');
-        titulo.className = "nameItemFormatado";
-        titulo.textContent = listaResultado;
-    
-        itemListaFormatado.appendChild(titulo);
-        listaFormatar.appendChild(itemListaFormatado);
-    } 
-    
-     lista.innerHTML = ''
+        itemListaFormatado.appendChild(titulo)
+        listaFormatar.appendChild(itemListaFormatado)
+    }
+
+    lista.innerHTML = '';
 }
     //pegar o valor do nome(h2) ou armazenar os valores do input 
     //O problema está no input dbugar amanhã
