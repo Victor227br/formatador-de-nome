@@ -99,6 +99,8 @@ function formatadorLista() {
 
     lista.innerHTML = '';
 }
+
+
     //pegar o valor do nome(h2) ou armazenar os valores do input 
     //O problema está no input dbugar amanhã
     //pegar o nome do input 
