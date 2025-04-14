@@ -28,7 +28,7 @@ function listaNome(){
     nome.innerHTML = input.value;
 
     btnFormatar.addEventListener('click', function() {
-        formatador(nome);
+        criadorDeNovoItem(nome);
         item.innerHTML = " "
     })
 }
@@ -58,12 +58,11 @@ function formatarNomeComRegras(texto) {
             return palavra.charAt(0).toUpperCase() + palavra.slice(1)
     } else {
         return palavra
-}
-})
+} })
     .join(" ")
 }
 
-function formatador(nome) {
+function criadorDeNovoItem(nome) {
     let texto = nome.textContent
     let resultado = formatarNomeComRegras(texto)
 
@@ -78,7 +77,7 @@ function formatador(nome) {
     listaFormatar.appendChild(itemFormatado)
 }
 
-function formatadorLista() {
+function criadorDaNovaLista() {
     let listaPai = document.getElementById("listaNome")
     let liFilhos = listaPai.getElementsByClassName("nameItem")
 
@@ -100,13 +99,5 @@ function formatadorLista() {
     lista.innerHTML = '';
 }
 
-
-    //pegar o valor do nome(h2) ou armazenar os valores do input 
-    //O problema está no input dbugar amanhã
-    //pegar o nome do input 
-    //separar os nomes do input
-    //iterar os nomes 
-    //capitalizar cada um deles 
-    //atenção aos nomes 'de'
 
  
